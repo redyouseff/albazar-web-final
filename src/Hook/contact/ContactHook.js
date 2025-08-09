@@ -68,7 +68,7 @@ const ContactHook = () => {
         try {
             // استخدام Web3Forms للإرسال الحقيقي
             const submitData = new FormData();
-            submitData.append('access_key', '81d1a0c8-d9fe-411d-848d-a1f0c7fef506');
+            submitData.append('access_key', '6b15453d-904e-4163-a999-c27ed561c2cc');
             submitData.append('name', `${formData.firstName} ${formData.lastName}`);
             submitData.append('email', formData.email);
             submitData.append('subject', `رسالة جديدة من ${formData.firstName} ${formData.lastName} - Albazar`);
@@ -96,7 +96,7 @@ ${formData.message}
                 notify("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً", "success");
                 
                 // طباعة تأكيد في console
-                console.log('✅ تم إرسال الرسالة بنجاح إلى basmaomran20@gmail.com');
+                console.log('✅ تم إرسال الرسالة بنجاح إلى albazar424@gmail.com');
                 console.log('تفاصيل الرسالة:', {
                     من: `${formData.firstName} ${formData.lastName}`,
                     البريد: formData.email,
