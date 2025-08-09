@@ -4,12 +4,12 @@ import { LOGIN_USER, CREATE_USER, FORGET_PASSWORD, VERIFY_CODE, RESET_PASSWORD, 
 const initialState = {
     isAuthenticated: false,
     user: null,
-    createuser:[],
+    createuser: null,
     loading: false,
-    forgetpassword:[],
-    verifyCode:[],
-    resetPassword:[],
-    getLoggedInUser:[],
+    forgetpassword: null,
+    verifyCode: null,
+    resetPassword: null,
+    getLoggedInUser: null,
     error: null
 };
 

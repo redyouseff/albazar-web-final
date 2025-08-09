@@ -119,23 +119,7 @@ const Login = () => {
               {loading ? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
             </button>
 
-            <div className="relative flex py-4 items-center">
-              <div className="flex-grow border-t border-gray-400"></div>
-              <span className="flex-shrink mx-4 text-gray-500" style={{ fontFamily: 'Cairo' }}>أو سجل بواسطة</span>
-              <div className="flex-grow border-t border-gray-400"></div>
-            </div>
 
-            <div className="flex justify-center space-x-reverse space-x-4">
-              <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Google">
-                <img src={google} alt="Google" className="w-7 h-7 object-contain" />
-              </button>
-              <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Apple">
-                <img src={apple} alt="Apple" className="w-7 h-7 object-contain" />
-              </button>
-              <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Facebook">
-                <img src={facbook} alt="Facebook" className="w-7 h-7 object-contain" />
-              </button>
-            </div>
 
             <div className="text-center mt-4">
               <span className="text-gray-700" style={{ fontFamily: 'Cairo' }}>

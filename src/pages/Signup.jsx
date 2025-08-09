@@ -125,7 +125,7 @@ const Signup = () => {
               <div className="phone-input-container" style={{ position: 'relative', zIndex: 50 }}>
                 <PhoneInput
                   international
-                  defaultCountry="SA"
+                  defaultCountry="SY"
                   value={phone}
                   onChange={onchangePhone}
                   className="custom-phone-input"
@@ -186,41 +186,23 @@ const Signup = () => {
                 </label>
               </div>
               <label htmlFor="terms" className="text-xs text-gray-900 leading-relaxed cursor-pointer">
-                أعرض منتجاتك للبيع على الباز مقابل 99 ريال فقط من خيدة المبيعات إبداء الموافقة على الشروط والأحكام
-                للمرمز إعترف انني اعلم
+                أعرض منتجاتك للبيع على الباز   موافق على الشروط والأحكام 
+                
               </label>
             </div>
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !agreeToTerms}
               className={`w-full bg-[#0e1414] text-yellow-400 py-3 rounded-lg font-medium transition-colors ${
-                loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-800'
+                loading || !agreeToTerms ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-800'
               }`}
               style={{ fontFamily: 'Cairo' }}
             >
               {loading ? 'جاري التسجيل...' : 'إنشاء حساب'}
             </button>
 
-            <div className="text-center">
-              <div className="flex items-center justify-center space-x-reverse space-x-4 my-4">
-                <span className="h-px bg-gray-400 flex-1"></span>
-                <span className="text-gray-600 text-sm" style={{ fontFamily: 'Cairo' }}>أو سجل بواسطة</span>
-                <span className="h-px bg-gray-400 flex-1"></span>
-              </div>
 
-              <div className="flex justify-center space-x-reverse space-x-4">
-                <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Google">
-                  <img src={google} alt="Google" className="w-7 h-7 object-contain rounded-full" />
-                </button>
-                <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Apple">
-                  <img src={facbook} alt="Apple" className="w-7 h-7 object-contain rounded-full" />
-                </button>
-                <button type="button" className="bg-white p-3 rounded-full shadow hover:bg-gray-50 transition-colors" title="Facebook">
-                  <img src={apple} alt="Facebook" className="w-7 h-7 object-contain rounded-full" />
-                </button>
-              </div>
-            </div>
 
             <div className="text-center mt-4">
               <span className="text-gray-700 text-sm" style={{ fontFamily: 'Cairo' }}>
