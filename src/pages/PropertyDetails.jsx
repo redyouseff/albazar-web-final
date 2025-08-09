@@ -56,6 +56,17 @@ import ABSdarkmode  from "/images/spesificProptie/ABS Brakes 5.svg";
 import Blinddarkmode  from "/images/spesificProptie/Blind Eye System 1.svg";
 import Airbagsdarkmode from "/images/spesificProptie/Airbags 2.svg";
 import Speed_controldarkmode from "/images/spesificProptie/Speed control 3.svg";
+import tyre_pressuredarkmode from "/images/spesificProptie/tyre pressure Dark.svg";
+import center_lockdarkmode from "/images/spesificProptie/center lock Dark.svg";
+import Elec_seatdarkmode from "/images/spesificProptie/Heated Seat D.svg";
+import No_keydarkmode from "/images/spesificProptie/No key D.svg";
+import Massage_seatdarkmode from "/images/spesificProptie/Massage seat D.svg";
+import Heated_Streeing_Wheeldarkmode from "/images/spesificProptie/Heated Streeing Wheel D.svg";
+import Heated_Seatdarkmode from "/images/spesificProptie/Heated Seat D.svg";
+import Sunroofdarkmode from "/images/spesificProptie/Sunroof D.svg";
+import Panoramic_Roofdarkmode from "/images/spesificProptie/Panoramic Roof D.svg";
+import Bluetooth_Systemdarkmode from "/images/spesificProptie/Bluetooth System D.svg";
+
 
 import Electric from "/images/spesificProptie/Electric Mirror Yellow.svg";
 import ABS  from "/images/spesificProptie/ABS Brakes Yellow.svg";
@@ -63,15 +74,41 @@ import Blind  from "/images/spesificProptie/Blind Eye System Yellow.svg";
 import Airbags from "/images/spesificProptie/Airbags Yellow.svg";
 import Speed_control from "/images/spesificProptie/Speed control Yellow.svg";
 
+import tyre_pressure from "/images/spesificProptie/tyre pressure.svg";
+import center_lock from "/images/spesificProptie/center lock.svg";
+import Elec_seat from "/images/spesificProptie/Elec. seat.svg";
+import No_key from "/images/spesificProptie/No key.svg";
+import Massage_seat from "/images/spesificProptie/Massage seat.svg";
+import Heated_Streeing_Wheel from "/images/spesificProptie/Heated Streeing Wheel.svg";
+import Heated_Seat from "/images/spesificProptie/Heated Seat.svg";
+import Sunroof from "/images/spesificProptie/Sunroof.svg";
+import Panoramic_Roof from "/images/spesificProptie/Panoramic Roof.svg";
+import Bluetooth_System from "/images/spesificProptie/Bluetooth System.svg";
 
-
-
+import default_icon from "/images/spesificProptie/Default Icon.svg";
+import default_icon_darkmode from "/images/spesificProptie/Default Icon Dark.svg";
 
 
 import inside_out from "/images/proprties/bulding/inside-out black 000.svg";
 
 import inside_outdarkmode from "/images/proprties/bulding/inside-out yellow.svg";
 
+
+
+//proprties
+import Security from "/images/spesificProptie/Security.svg";
+import Solar_Energy from "/images/spesificProptie/Solar Energy.svg";
+import Independent_Enterance from "/images/spesificProptie/Independent Enterance.svg";
+import Parking from "/images/spesificProptie/Parking.svg";
+import Elevator from "/images/spesificProptie/Elevator.svg";
+
+//proprtiesDarkmode
+
+import Securitydarkmode from "/images/spesificProptie/Security D.svg";
+import Solar_Energy_darkmode from "/images/spesificProptie/Solar Energy D.svg";
+import Independent_Enterance_darkmode from "/images/spesificProptie/Independent Enterance D.svg";
+import Parking_darkmode from "/images/spesificProptie/Parking D.svg";
+import Elevator_darkmode from "/images/spesificProptie/Elevator D.svg";
 
 
 import ListingByIdHook from '../Hook/listing/listingByIdHook';
@@ -684,10 +721,14 @@ const PropertyDetails = () => {
                       case 'غرفة خادمة': return logo2;
                       case 'غاز مركزي': return logo6;
                       case 'حمام سباحة': return logo7;
-                      case 'مصعد': return logo8;
+                      case 'مصعد': return isDarkMode ? Elevator_darkmode : Elevator;
                       case 'تدفئة مركزية': return logo2;
                       case 'تكييف مركزي': return logo2;
-                      default: return logo1;
+                      case 'أمن': return isDarkMode ? Securitydarkmode : Security;
+                      case 'طاقة شمسية': return isDarkMode ? Solar_Energy_darkmode : Solar_Energy;
+                      case 'مدخل مستقل': return isDarkMode ? Independent_Enterance_darkmode : Independent_Enterance;
+                      case 'موقف سيارات': return isDarkMode ? Parking_darkmode : Parking;
+                      default: return isDarkMode ? default_icon_darkmode : default_icon;
                     }
                   };
                   
@@ -711,14 +752,24 @@ const PropertyDetails = () => {
                       case 'نظام النقطة العمياء': return isDarkMode ? Blinddarkmode : Blind;
                       case 'وسائد هوائية': return isDarkMode ? Airbagsdarkmode : Airbags;
                       case 'مثبت سرعة': return isDarkMode ? Speed_controldarkmode : Speed_control;
-                      case 'قفل مركزي': return logo8;
+                      case 'قفل مركزي': return isDarkMode ? center_lockdarkmode : center_lock;
+                      case 'مقاعد كهربائية': return isDarkMode ? Elec_seatdarkmode : Elec_seat;
+                      case 'دخول بدون مفتاح': return isDarkMode ? No_keydarkmode : No_key;
+                      case 'مقاعد مساج': return isDarkMode ? Massage_seatdarkmode : Massage_seat;
+                      case 'مقود مدفئ': return isDarkMode ? Heated_Streeing_Wheeldarkmode : Heated_Streeing_Wheel;
+                      case 'مقاعد مدفئة': return isDarkMode ? Heated_Seatdarkmode : Heated_Seat;
+                      case 'فتحة سقف': return isDarkMode ? Sunroofdarkmode : Sunroof;
+                      case 'سقف بانورامي': return isDarkMode ? Panoramic_Roofdarkmode : Panoramic_Roof;
+                      case 'نظام بلوتوث': return isDarkMode ? Bluetooth_Systemdarkmode : Bluetooth_System;
+                      case 'ضغط الإطارات': return isDarkMode ? tyre_pressuredarkmode : tyre_pressure;
+                      case 'مراقب ضغط الإطارات': return isDarkMode ? tyre_pressuredarkmode : tyre_pressure;
                       case 'كاميرا خلفية': return logo3;
                       case 'نظام ملاحة GPS': return logo4;
                       case 'تكييف هواء': return logo1;
                       case 'نوافذ كهربائية': return logo5;
                       case 'مقاعد جلدية': return logo6;
                       case 'نظام صوتي': return logo7;
-                      default: return logo1;
+                      default: return isDarkMode ? default_icon_darkmode : default_icon;
                     }
                   };
                   

@@ -1,23 +1,17 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { useDarkMode } from '../../context/DarkModeContext';
+import ContactHook from '../../Hook/contact/ContactHook';
 import logo from "/images/Black-Yellow 3 (1).png";
 import apple from "/images/App Store  White.png";
 import google from "/images/Google Play.png";
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
-  });
-
   const { isDarkMode } = useDarkMode();
+  const { formData, loading, updateFormData, submitForm } = ContactHook();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    submitForm();
   };
 
   return (
@@ -56,60 +50,74 @@ const Footer = () => {
                   type="text"
                   placeholder="الاسم الأول"
                   value={formData.firstName}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  onChange={(e) => updateFormData('firstName', e.target.value)}
+                  disabled={loading}
                   className={`w-full px-4 py-3 rounded-lg text-right transition-all focus:outline-none focus:ring-2 font-noon ${
                     isDarkMode 
                       ? 'bg-gray-700 text-gray-100 placeholder-gray-400 focus:ring-yellow-400 border border-gray-600' 
                       : 'bg-white text-black placeholder-black focus:ring-yellow-400'
-                  }`}
+                  } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 />
                 <input
                   type="text"
                   placeholder="الاسم الأخير"
                   value={formData.lastName}
-                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  onChange={(e) => updateFormData('lastName', e.target.value)}
+                  disabled={loading}
                   className={`w-full px-4 py-3 rounded-lg text-right transition-all focus:outline-none focus:ring-2 font-noon ${
                     isDarkMode 
                       ? 'bg-gray-700 text-gray-100 placeholder-gray-400 focus:ring-yellow-400 border border-gray-600' 
                       : 'bg-white text-black placeholder-black focus:ring-yellow-400'
-                  }`}
+                  } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 />
               </div>
               <input
                 type="email"
                 placeholder="البريد الإلكتروني"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) => updateFormData('email', e.target.value)}
+                disabled={loading}
                 className={`w-full px-4 py-3 rounded-lg text-right transition-all focus:outline-none focus:ring-2 font-noon ${
                   isDarkMode 
                     ? 'bg-gray-700 text-gray-100 placeholder-gray-400 focus:ring-yellow-400 border border-gray-600' 
                     : 'bg-white text-black placeholder-black focus:ring-yellow-400'
-                }`}
+                } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
               />
               <textarea
                 placeholder="اكتب رسالتك..."
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) => updateFormData('message', e.target.value)}
+                disabled={loading}
                 rows="4"
                 className={`w-full px-4 py-3 rounded-lg text-right transition-all resize-none focus:outline-none focus:ring-2 font-noon ${
                   isDarkMode 
                     ? 'bg-gray-700 text-gray-100 placeholder-gray-400 focus:ring-yellow-400 border border-gray-600' 
                     : 'bg-white text-black placeholder-black focus:ring-yellow-400'
-                }`}
+                } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
               />
               <button
                 type="submit"
+                disabled={loading}
                 className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                  isDarkMode 
-                    ? 'text-gray-900 hover:bg-yellow-400' 
-                    : 'bg-[#0e1414] text-yellow-400 hover:bg-gray-800'
+                  loading 
+                    ? 'opacity-50 cursor-not-allowed' 
+                    : isDarkMode 
+                      ? 'text-gray-900 hover:bg-yellow-400' 
+                      : 'bg-[#0e1414] text-yellow-400 hover:bg-gray-800'
                 }`}
                 style={{ 
                   fontFamily: 'Cairo',
                   backgroundColor: isDarkMode ? '#ffec00' : undefined
                 }}
               >
-                إرسال
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+                    جاري الإرسال...
+                  </div>
+                ) : (
+                  'إرسال'
+                )}
               </button>
             </form>
           </div>
