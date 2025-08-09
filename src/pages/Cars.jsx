@@ -888,8 +888,22 @@ const Cars = () => {
 
         {/* App Store Links */}
         <div className="container mx-auto py-4 sm:py-6 flex flex-row justify-center items-center gap-3 sm:gap-4 px-4">
-          <img src="/images/App Store  White.png" alt="App Store" className="h-16" />
-          <img src="/images/Google Play.png" alt="Google Play" className="h-16" />
+          <a 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-105 cursor-pointer"
+          >
+            <img src="/images/App Store  White.png" alt="App Store" className="h-16" />
+          </a>
+          <a 
+            href="https://play.google.com/store/apps/details?id=com.mohassan.albazar_ap&pcampaignid=web_share" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-105 cursor-pointer"
+          >
+            <img src="/images/Google Play.png" alt="Google Play" className="h-16" />
+          </a>
         </div>
 
         {/* Cars Grid */}

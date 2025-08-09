@@ -754,7 +754,7 @@ const PropertiesForSale = () => {
             <img src="/images/App Store  White.png" alt="App Store" className="h-10 sm:h-12" />
           </a>
           <a 
-            href="https://play.google.com/store/apps/details?id=com.albazar" 
+            href="https://play.google.com/store/apps/details?id=com.mohassan.albazar_ap&pcampaignid=web_share" 
             target="_blank" 
             rel="noopener noreferrer"
             className="transition-transform hover:scale-105 cursor-pointer"

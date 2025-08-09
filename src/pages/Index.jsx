@@ -230,7 +230,12 @@ const Index = () => {
             </div>
           </div>
           <div className="flex items-center justify-center gap-4 mt-8">
-            <a href="#" className="transition-transform hover:scale-105 w-[120px] sm:w-[150px] md:w-[180px]">
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.mohassan.albazar_ap&pcampaignid=web_share" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-transform hover:scale-105 w-[120px] sm:w-[150px] md:w-[180px]"
+            >
               <img src={ googlePlayDarkmode } alt="Google Play" className="w-full" />
             </a>
             <a href="#" className="transition-transform hover:scale-105 w-[120px] sm:w-[150px] md:w-[180px]">

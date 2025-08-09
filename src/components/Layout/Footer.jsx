@@ -32,9 +32,14 @@ const Footer = () => {
               منصة عقارية شاملة تمكنك من البحث عن العقارات المناسبة لك وبيع أو إيجار عقاراتك بسهولة وأمان
             </p>
             <div className="flex flex-row gap-4">
-              <Link to="#" className="transition-transform hover:scale-105">
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.mohassan.albazar_ap&pcampaignid=web_share" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-105"
+              >
                 <img src={google} alt="Get it on Google Play" className="h-12" />
-              </Link>
+              </a>
               <Link to="#" className="transition-transform hover:scale-105">
                 <img src={apple} alt="Download on App Store" className="h-12" />
               </Link>
