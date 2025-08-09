@@ -186,7 +186,7 @@ const Signup = () => {
                 </label>
               </div>
               <label htmlFor="terms" className="text-xs text-gray-900 leading-relaxed cursor-pointer">
-              اعرض منتجاتك علي عالبازار
+                أعرض منتجاتك للبيع على عالبازار   موافق على الشروط والأحكام 
                 
               </label>
             </div>
